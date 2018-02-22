@@ -91,10 +91,10 @@ void multiple_observers(void) {
   coco_observer_t *observer_inner, *observer_middle, *observer_outer;
   coco_problem_t *problem_inner, *problem_middle, *problem_outer;
 
-  suite = coco_suite("bbob-biobj", "year: 2016", "dimensions: 2 function_indices: 1-3 instance_indices: 1-2");
+  suite = coco_suite("bbob", "year: 2016", "dimensions: 2 function_indices: 1-3 instance_indices: 1-2");
 
   observer_inner = coco_observer("toy", "");
-  observer_middle = coco_observer("bbob-biobj", "log_nondominated: final log_decision_variables: none");
+  observer_middle = coco_observer("bbob", "");
   observer_outer = coco_observer("toy", "");
 
   while ((problem_inner = coco_suite_get_next_problem(suite, observer_inner)) != NULL) {
