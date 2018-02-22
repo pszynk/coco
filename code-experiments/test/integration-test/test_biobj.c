@@ -106,11 +106,11 @@ void multiple_observers(void) {
 
     problem_middle = coco_problem_remove_observer(problem_outer, observer_outer);
     problem_inner = coco_problem_remove_observer(problem_middle, observer_middle);
+    
+    coco_problem_free(problem_inner);
+    coco_problem_free(problem_middle);
+    coco_problem_free(problem_outer);
   }
-  
-  coco_problem_free(problem_inner);
-  coco_problem_free(problem_middle);
-  coco_problem_free(problem_outer);
   
   coco_observer_free(observer_inner);
   coco_observer_free(observer_middle);
